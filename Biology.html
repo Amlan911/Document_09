@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Specialized Biology Tuition - Class 9 to 12</title>
+
+<style>
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #eaf6f1;
+    color: #2d3436;
+    line-height: 1.6;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1em 3em;
+  }
+
+  /* Hero Banner */
+  header {
+    background: linear-gradient(135deg, #58c49f, #38a3a5);
+    color: white;
+    padding: 4em 1em 6em;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-weight: 900;
+    letter-spacing: 4px;
+    font-size: 3.5rem;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+  }
+  header small {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: normal;
+    margin-top: 0.5em;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  }
+  .btn-primary {
+    background: #2d6a4f;
+    color: white;
+    padding: 0.85em 2em;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-top: 2em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 10px 20px rgba(45,106,79,.4);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background: #1b4332;
+    outline: none;
+  }
+
+  /* Section titles */
+  section h2 {
+    color: #14532d;
+    border-bottom: 3px solid #58c49f;
+    padding-bottom: 0.4em;
+    margin-bottom: 1em;
+    font-weight: 800;
+    font-size: 2rem;
+  }
+
+  /* Classes Offered */
+  .classes-offered {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 1.2em;
+    margin-bottom: 3em;
+  }
+  .class-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5em 1.2em;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .class-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  }
+  .class-icon {
+    font-size: 3.5rem;
+    color: #38a3a5;
+    margin-bottom: 0.7em;
+  }
+  .class-card h3 {
+    font-weight: 700;
+    margin-bottom: 0.4em;
+    color: #1b4332;
+  }
+  .class-card p {
+    color: #4a4a4a;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
+  /* Features */
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-bottom: 3em;
+  }
+  .feature {
+    flex: 1 1 220px;
+    background: white;
+    padding: 1.5em 1.2em;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .feature-icon {
+    font-size: 3rem;
+    color: #2d6a4f;
+    margin-bottom: 0.8em;
+  }
+  .feature h3 {
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+  .feature p {
+    font-weight: 500;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+  }
+
+  /* Fees Section */
+  .fees {
+    background: #d1fae5;
+    padding: 2em 1em;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(45,106,79,0.3);
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto 4em auto;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #14532d;
+  }
+
+  /* Teacher Info */
+  .teacher-info {
+    background: white;
+    max-width: 450px;
+    margin: 0 auto 4em auto;
+    padding: 1.8em 1.6em;
+    border-radius: 12px;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.07);
+    text-align: center;
+    color: #14532d;
+    font-weight: 600;
+    font-size: 1.15rem;
+  }
+  .teacher-info h2 {
+    margin-bottom: 1em;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  .teacher-info p {
+    margin: 0.3em 0;
+  }
+  .teacher-contact a {
+    color: #2d6a4f;
+    font-weight: 700;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    background: white;
+    border-radius: 12px;
+    padding: 2em 1em;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.07);
+    max-width: 900px;
+    margin: 0 auto 4em auto;
+    font-size: 1.1rem;
+  }
+  .testimonial {
+    border-left: 4px solid #38a3a5;
+    padding-left: 1em;
+    margin-bottom: 1.5em;
+    font-style: italic;
+    color: #2f2f2f;
+  }
+  .testimonial:last-child {
+    margin-bottom: 0;
+  }
+  .testimonial-name {
+    font-weight: 700;
+    margin-top: 0.5em;
+    text-align: right;
+    color: #1b4332;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    background: #14532d;
+    color: white;
+    padding: 1.5em 1em;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 540px) {
+    header {
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      padding: 3em 1em 4em;
+    }
+    section h2 {
+      font-size: 1.5rem;
+    }
+    .features {
+      flex-direction: column;
+      gap: 1.5em;
+    }
+    .class-card p {
+      font-size: 1rem;
+    }
+    .testimonial {
+      font-size: 1rem;
+    }
+  }
+</style>
+<!-- Google Fonts Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+Specialized Biology Tuition
+<small>Class 9 to 12, as per West Bengal Board Syllabus</small>
+  <button class="btn-primary" onclick="document.getElementById('enroll').scrollIntoView({behavior:'smooth'})">এখনই ভর্তি হন</button>
+</header>
+
+<main class="container">
+  <section>
+    <h2>শ্রেণিসমূহ</h2>
+    <div class="classes-offered" aria-label="বায়োলজি শ্রেণিসমূহ">
+      <article class="class-card" tabindex="0" aria-describedby="desc9">
+        <div class="class-icon" aria-hidden="true">🧬</div>
+        <h3>শ্রেণি ৯ - জীববিজ্ঞান</h3>
+        <p id="desc9">প্রাণকোষের গঠন, উদ্ভিদ ও প্রাণীজীবনের পরিচিতি এবং মৌলিক জীববিজ্ঞান ধারণা।</p>
+      </article>
+      <article class="class-card" tabindex="0" aria-describedby="desc10">
+        <div class="class-icon" aria-hidden="true">🔬</div>
+        <h3>শ্রেণি ১০ - জীববিজ্ঞান</h3>
+        <p id="desc10">মানব দেহের অঙ্গতন্ত্র, ক্ষুদ্রজীব ও পরিবেশ সম্পর্কে বিস্তারিত আলোচনা।</p>
+      </article>
+      <article class="class-card" tabindex="0" aria-describedby="desc11">
+        <div class="class-icon" aria-hidden="true">🌿</div>
+        <h3>শ্রেণি ১১ - জীববিজ্ঞান</h3>
+        <p id="desc11">অণুজীব বিজ্ঞান, বসতন্ত্র ও পরিবেশবিদ্যা সম্পর্কিত গভীর অধ্যয়ন।</p>
+      </article>
+      <article class="class-card" tabindex="0" aria-describedby="desc12">
+        <div class="class-icon" aria-hidden="true">🧫</div>
+        <h3>শ্রেণি ১২ - জীববিজ্ঞান</h3>
+        <p id="desc12">মানব শারীরবিদ্যা, জৈবপ্রযুক্তি এবং প্রতিযোগিতামূলক পরীক্ষার প্রস্তুতি।</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>কেন আমাদের নির্বাচন করবেন?</h2>
+    <div class="features" aria-label="আমাদের ক্লাসের সুবিধাসমূহ">
+      <article class="feature">
+        <div class="feature-icon" aria-hidden="true">🏆</div>
+        <h3>দক্ষ শিক্ষক</h3>
+        <p>অভিজ্ঞ জীববিজ্ঞান শিক্ষক যারা স্পষ্ট ও বোধগম্য শিক্ষাদান করেন।</p>
+      </article>
+      <article class="feature">
+        <div class="feature-icon" aria-hidden="true">📚</div>
+        <h3>সম্পূর্ণ পাঠ্যসামগ্রী</h3>
+        <p>সুপরিকল্পিত নোট, ভিডিও এবং প্রশ্নমালা যা শেখাকে সহজ করে।</p>
+      </article>
+      <article class="feature">
+        <div class="feature-icon" aria-hidden="true">💻</div>
+        <h3>ইন্টারেক্টিভ ক্লাস</h3>
+        <p>প্রশ্নোত্তর সেশন এবং জীবন শৈলীগত আলোচনা।</p>
+      </article>
+      <article class="feature">
+        <div class="feature-icon" aria-hidden="true">🎯</div>
+        <h3>পরীক্ষা কেন্দ্রিক</h3>
+        <p>বোর্ড এবং প্রতিযোগিতামূলক পরীক্ষার জন্য বিশেষ প্রস্তুতি।</p>
+      </article>
+    </div>
+  </section>
+
+<section class="fees" aria-label="Fees Info">
+<h3>Low-cost fees</h3>
+<p>Only <strong>₹400</strong></p> per student
+</section>
+
+<section class="teacher-info" aria-label="Teacher Info">
+<h2>Your Teacher</h2>
+<p><strong>Name:</strong> Amlan Nath</p>
+<p><strong>Mobile:</strong> <a href="tel:+919641555312">9641555312</a></p>
+<p><strong>Email ID:</strong> <a href="mailto:amlannath911@gmail.com">amlannath911@gmail.com</a></p>
+</section>
+<section id="enroll" aria-label="Enrollment Form">
+<h2>Enroll Now</h2>
+    <p style="max-width:600px; margin-bottom: 1em;">
+      জীববিজ্ঞানে সফলতা পেতে প্রস্তুত? এখনিভর্তি হয়ে আপনার জ্ঞান বাড়ান!
+    </p>
+    <form id="enrollForm" onsubmit="handleEnroll(event)" style="max-width: 450px; margin: 0 auto; background: white; padding: 1.5em; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.1);">
+      <label for="name" style="display:block; margin-bottom: 0.5em; font-weight: 600;">Name</label>
+      <input type="text" id="name" name="name" required placeholder="Name" style="width: 100%; padding: 0.6em; margin-bottom: 1em; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;" />
+      
+      <label for="studentMobile" style="display:block; margin-bottom: 0.5em; font-weight: 600;">Mobile Number</label>
+      <input type="tel" id="studentMobile" name="studentMobile" pattern="\\d{10}" maxlength="10" required placeholder="10 Digit Mobile Number" style="width: 100%; padding: 0.6em; margin-bottom: 1em; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;" />
+      
+      <label for="studentEmail" style="display:block; margin-bottom: 0.5em; font-weight: 600;">Email </label>
+      <input type="email" id="studentEmail" name="studentEmail" required placeholder="Email" style="width: 100%; padding: 0.6em; margin-bottom: 1em; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;" />
+
+      <label for="classSelect" style="display:block; margin-bottom: 0.5em; font-weight: 600;">Class Select</label>
+      <select id="classSelect" name="classSelect" required style="width: 100%; padding: 0.6em; margin-bottom: 1em; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;">
+<label for="classSelect" style="display:block; margin-bottom: 0.5em; font-weight: 600;">Select a class</label>
+<select id="classSelect" name="classSelect" required style="width: 100%; padding: 0.6em; margin-bottom: 1em; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;">
+<option disabled selected value="">Select a class</option>
+<option value="9">Class 9</option>
+<option value="10">Class 10</option>
+<option value="11">Class 11</option>
+<option value="12">Class 12</option>
+</select>
+      <button type="submit" class="btn-primary" style="width: 100%; font-size: 1.2rem;">Admission and fee payment 400/-</button>
+      <p id="formMessage" role="alert" style="margin-top: 1em; color: #2a662a; font-weight: 600; display:none;"></p>
+    </form>
+  </section>
+
+  <section>
+    <h2>শিক্ষার্থীদের মতামত</h2>
+    <div class="testimonials" aria-label="শিক্ষার্থীদের প্রশংসাপত্র">
+      <blockquote class="testimonial">
+        "এই ক্লাসগুলো আমাকে জটিল জীববিজ্ঞান ধারণা সহজে বুঝতে সাহায্য করেছে। অত্যন্ত সুপারিশযোগ্য!"
+        <div class="testimonial-name">- অনন্যা, শ্রেণি ১২</div>
+      </blockquote>
+      <blockquote class="testimonial">
+        "আকর্ষণীয় এবং পরিষ্কার পাঠ আমার জীববিজ্ঞানকে সর্বাপেক্ষা প্রিয় বিষয়ে পরিণত করেছে। ফিরেটাও দারুণ!"
+        <div class="testimonial-name">- রাজ, শ্রেণি ১০</div>
+      </blockquote>
+      <blockquote class="testimonial">
+        "অদ্বিতীয় শিক্ষাদান এবং কার্যকর পাঠ্যসামগ্রী। আমি আমার বোর্ড পরীক্ষায় শীর্ষ স্থান অধিকার করেছি!"
+        <div class="testimonial-name">- প্রিয়া, শ্রেণি ১১</div>
+      </blockquote>
+    </div>
+  </section>
+</main>
+
+<footer>
+&copy; 2025 Amlan's Biology Tuition. All rights reserved.
+</footer>
+
+<script>
+  function handleEnroll(event) {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value.trim();
+    const mobile = form.studentMobile.value.trim();
+    const email = form.studentEmail.value.trim();
+    const studentClass = form.classSelect.value;
+    const formMessage = document.getElementById('formMessage');
+
+    // Simple validation for mobile: exactly 10 digits numeric
+    const mobilePattern = /^\\d{10}$/;
+    if(name === '' || email === '' || studentClass === '' || mobile === '') {
+formMessage.textContent = 'Please fill in all the information.';
+      formMessage.style.color = '#cc3333';
+      formMessage.style.display = 'block';
+      return;
+    }
+    if(!mobilePattern.test(mobile)) {
+formMessage.textContent = 'Please provide a valid 10-digit mobile number.';
+      formMessage.style.color = '#cc3333';
+      formMessage.style.display = 'block';
+      return;
+    }
+
+    // Validate email format with HTML5 (already done by input type email) but double check here
+    const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+    if(!emailPattern.test(email)) {
+formMessage.textContent = 'Please provide a valid email address.';
+      formMessage.style.color = '#cc3333';
+      formMessage.style.display = 'block';
+      return;
+    }
+
+    // Simulate enrollment processing and payment
+formMessage.textContent = 'Your admission is being processed...';
+    formMessage.style.color = '#2a662a';
+    formMessage.style.display = 'block';
+
+    setTimeout(() => {
+formMessage.textContent = Thank you, ${name}! You have been successfully enrolled in class ${studentClass} Biology. We will contact you via mobile (${mobile}) and email (${email}) shortly.;
+      form.reset();
+      formMessage.style.color = '#2a662a';
+    }, 1500);
+  }
+</script>
+
+</body>
+</html>
